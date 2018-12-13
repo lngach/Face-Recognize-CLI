@@ -25,14 +25,15 @@ $('#manual-detect').on('click', (e) => {
     })
 
     if (state) {
-        let leftFace = $('#left-face').file[0]
-        let midFace = $('#mid-face').file[0]
-        let rightFace = $('#right-face').file[0]
+        let leftFace = $('#left-face')[0].files[0]
+        let midFace = $('#mid-face')[0].files[0]
+        let rightFace = $('#right-face')[0].files[0]
+        let username = $('#username').val()
         let payload = new FormData()
         payload.append('file', leftFace)
         payload.append('file', midFace)
         payload.append('file', rightFace)
-        payload.append('name', 'bon')
+        payload.append('name', username)
         manualDetect(payload)
     }
 

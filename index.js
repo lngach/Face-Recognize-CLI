@@ -1,14 +1,13 @@
 // import lib
 const express = require('express')
-const bodyParser  = require('body-parser')
 
 // init app
 const app = express()
 
 // apply middleware
 // -- body-parser
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 // -- apply pug template engine
 app.set('views', __dirname + '/src/views')

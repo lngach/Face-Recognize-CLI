@@ -1,23 +1,23 @@
 const autoDetect = payload => {
     $.ajax({
         url: '/auto-detect',
-        method: 'POST',
+        type: 'POST',
         data: payload,
         processData: false,
         contentType: false
     }).done(res => {
-        res.log(res)
-    }).failed(err => console.log(err))
+        console.log(res)
+    }).fail(err => console.log(err))
 }
 
 const manualDetect = payload => {
     $.ajax({
         url: '/manual-detect',
-        method: 'POST',
+        type: 'POST',
         data: payload,
         processData: false,
         contentType: false
     }).done(res => {
-        res.log(res)
-    }).failed(err => console.log(err))
+        alert(res)
+    }).fail(err => console.log(err))
 }
